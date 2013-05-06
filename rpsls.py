@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import random
 mychoice = raw_input('I am playing with:')
 def name_to_number(name) :

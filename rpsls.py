@@ -1,5 +1,5 @@
 import random
-mychoice = raw_input('I am playing with:')
+mychoice = input('I am playing with:')
 def name_to_number(name) :
     if name == "rock" : return 0
     elif name == "fire" : return 1
@@ -107,6 +107,6 @@ def main():
     global mychoice
     while mychoice != 'exit' and mychoice != 'quit': 
         print rpsls(mychoice) 
-        mychoice = raw_input('I am playing with:')
+        mychoice = input('I am playing with:')
 
 main() 

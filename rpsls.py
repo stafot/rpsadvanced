@@ -41,69 +41,40 @@ def rpsls(name):
    comp_selection = number_to_name(comp_number)
    dif = (player_number - comp_number)%15
    if player_number < 15 and dif == 0 :
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Player and computer tie!"
+        outcome = "Player and computer tie!"
    elif player_number < 15 and dif == 1:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Computer wins!"
+        outcome = "Computer wins!"
    elif player_number < 15 and dif == 2:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Computer wins!"
+        outcome = "Computer wins!"
    elif player_number < 15 and dif == 3:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Computer wins!"
+        outcome = "Computer wins!"
    elif player_number < 15 and dif == 4:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Computer wins!"
+        outcome = "Computer wins!"
    elif player_number < 15 and dif == 5:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Computer wins!"
+        outcome = "Computer wins!"
    elif player_number < 15 and dif == 6:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Computer wins!"    
+        outcome = "Computer wins!"    
    elif player_number < 15 and dif == 7:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Computer wins!"
+        outcome = "Computer wins!"
    elif player_number < 15 and dif == 8:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Player wins!"
+        outcome = "Player wins!"
    elif player_number < 15 and dif == 9:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Player wins!"        
+        outcome = "Player wins!"        
    elif player_number < 15 and dif == 10:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Player wins!"
+        outcome = "Player wins!"
    elif player_number < 15 and dif == 11:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Player wins!"
+        outcome = "Player wins!"
    elif player_number < 15 and dif == 12:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Player wins!"
+        outcome = "Player wins!"
    elif player_number < 15 and dif == 13:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Player wins!"
+        outcome = "Player wins!"
    elif player_number < 15 and dif == 14:
-        print "Player chooses", str(name) 
-        print "Computer chooses", str(comp_selection)
-        print "Player wins!"    
-   else : print mychoice+" is not a valid option. Valid options are:\n rock\n fire\n scissors\n snake\n human\n tree\n wolf\n sponge\n paper\n air\n water\n dragon\n devil\n lightning\n gun"
-   return ""
-        
-def input():  
+        outcome = "Player wins!"
+   else :
+		return mychoice+" is not a valid option. Valid options are:\n rock\n fire\n scissors\n snake\n human\n tree\n wolf\n sponge\n paper\n air\n water\n dragon\n devil\n lightning\n gun"
+   return "Player chooses: %s\nComputer chooses: %s\n%s" % (str(name), str(comp_selection), outcome)
+
+def input():
     global mychoice
     while mychoice != 'exit' and mychoice != 'quit': 
         print rpsls(mychoice) 

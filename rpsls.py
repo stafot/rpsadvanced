@@ -103,10 +103,10 @@ def rpsls(name):
    else : print mychoice+" is not a valid option. Valid options are:\n rock\n fire\n scissors\n snake\n human\n tree\n wolf\n sponge\n paper\n air\n water\n dragon\n devil\n lightning\n gun"
    return ""
         
-def input():  
+def main():  
     global mychoice
     while mychoice != 'exit' and mychoice != 'quit': 
         print rpsls(mychoice) 
         mychoice = raw_input('I am playing with:')
 
-input() 
+main() 

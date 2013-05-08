@@ -29,7 +29,7 @@ def GetHelp():
     return "Valid options are:\n rock\n fire\n scissors\n snake\n human\n tree\n wolf\n sponge\n paper\n air\n water\n dragon\n devil\n lightning\n gun\n ----\n exit\n quit \n----\n help\n ?"
 
 def main():
-    print "Type 'help' for help, 'quit' or 'exit' to end"
+    print "Type 'help' or '?' for help, 'quit' or 'exit' to end"
     mychoice = raw_input('I am playing with:')
     while mychoice != 'exit' and mychoice != 'quit':
         if mychoice == 'help' or '?':

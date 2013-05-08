@@ -12,20 +12,30 @@ def number_to_name(number):
 def rpsls(name):
     nameL = name.lower()
     if name_exists(nameL):
-        player_number = name_to_number(nameL)
-        comp_number = random.randrange(0,14)
-        dif = (player_number - comp_number)%15
-        if dif == 0:
-            outcome = "Player and computer tie!"
-        elif dif > 0 and dif < 8:
-            outcome = "Computer wins!"
-        else:
-            outcome = "Player wins!"
-        return "Player chooses: %s\nComputer chooses: %s\n%s" % (str(nameL), number_to_name(comp_number), outcome)
+		Players = ["Player", "Computer"]
+		choices = [name_to_number(nameL), random.randrange(0,14)]
+		choicesStr = [number_to_name(choices[0]), number_to_name(choices[1])]
+		print getResultInStr(Players, ChoicesStr, game_engine(Choices[0], Choices[1])
     else:
         return name + " is not a valid option.\n" + GetHelp()
 
+# Although there's no change to the previous version,
+# we add those 2 functions (game_engine, getRetInStr)
+# so that future implementations/features will be
+# easier to apply.
+def game_engine(choices):
+	dif = (choices[0] - choices[1])%15
+	if dif == 0: return 0
+	elif dif > 7: return 1
+	else: return 2
+
+def getResultInStr(players, choicesStr, outcomeNum):
+	if outcomeNum == 0: outcome = "%s and %s tie!" % (players[0], players[1])
+	else: outcome = "%s wins!" % (players[outcomeNum-1])
+	return "%s chooses: %s\n%s chooses: %s\n%s" % (players[0], choicesStr[0], players[1], choicesStr[1], outcome)
+
 def GetHelp():
+	# TODO: Help string should not be hardcoded, but should be read from name_and_number tuple list
     return "Valid options are:\n rock\n fire\n scissors\n snake\n human\n tree\n wolf\n sponge\n paper\n air\n water\n dragon\n devil\n lightning\n gun\n ----\n exit\n quit \n----\n help\n ?"
 
 def main():

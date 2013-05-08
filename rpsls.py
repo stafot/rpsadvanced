@@ -32,7 +32,7 @@ def main():
     print "Type 'help' or '?' for help, 'quit' or 'exit' to end"
     mychoice = raw_input('I am playing with:')
     while mychoice != 'exit' and mychoice != 'quit':
-        if mychoice == 'help' or '?':
+        if mychoice == 'help' or mychoice == '?':
             print GetHelp()
         else:
             print rpsls(mychoice)

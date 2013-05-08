@@ -1,6 +1,6 @@
 import random
 global name_and_number
-name_and_number = [("rock", 0), ("fire", 1), ("scissors", 2), ("snake", 3), ("human", 4), ("tree", 5), ("wolf", 6), ("sponge", 7), ("paper", 8), ("air", 9), ("water", 10), ("dragon", 11), ("devil", 12), ("lightning", 13), ("gun", 14)]
+name_and_number = [("rock", 0), ("fire", 1), ("scissors", 2), ("snake", 3), ("human", 4), ("tree", 5), ("wolf", 6), ("sponge", 7), ("paper", 8), ("air", 9), ("water", 10), ("dragon", 11), ("devil", 12), ("lightning", 13), ("gun", 14), ("help", 15), ("?", 16),("quit", 17),("exit", 18)]
 
 def name_exists(name):
     return name in [nameTmp[0] for nameTmp in name_and_number]
@@ -35,8 +35,9 @@ def getResultInStr(players, choicesStr, outcomeNum):
     return "%s chooses: %s\n%s chooses: %s\n%s" % (players[0], choicesStr[0], players[1], choicesStr[1], outcome)
 
 def GetHelp():
-    # TODO: Help string should not be hardcoded, but should be read from name_and_number tuple list
-    return "Valid options are:\n rock\n fire\n scissors\n snake\n human\n tree\n wolf\n sponge\n paper\n air\n water\n dragon\n devil\n lightning\n gun\n ----\n exit\n quit \n----\n help\n ?"
+    l = [nameTmp[0] for nameTmp in name_and_number]
+    m = (str(l).strip('[]'))
+    return "Valid options are:\n %s\n" % m
 
 def main():
     print "Type 'help' or '?' for help, 'quit' or 'exit' to end"

@@ -1,5 +1,6 @@
 import random
 global name_and_number
+# FFT (Food For Thought): Maybe (I said, MAYBE) the "commands" and "options" list should be different lists?
 name_and_number = [("rock", 0), ("fire", 1), ("scissors", 2), ("snake", 3), ("human", 4), ("tree", 5), ("wolf", 6), ("sponge", 7), ("paper", 8), ("air", 9), ("water", 10), ("dragon", 11), ("devil", 12), ("lightning", 13), ("gun", 14), ("help", 15), ("?", 16),("quit", 17),("exit", 18)]
 
 def name_exists(name):
@@ -12,10 +13,10 @@ def number_to_name(number):
 def rpsls(name):
     nameL = name.lower()
     if name_exists(nameL):
-        Players = ["Player", "Computer"]
+        players = ["Player", "Computer"]
         choices = [name_to_number(nameL), random.randrange(0,14)]
         choicesStr = [number_to_name(choices[0]), number_to_name(choices[1])]
-        print getResultInStr(Players, ChoicesStr, game_engine(Choices[0], Choices[1])
+        return getResultInStr(players, choicesStr, game_engine(choices))
     else:
         return name + " is not a valid option.\n" + GetHelp()
 
@@ -35,9 +36,10 @@ def getResultInStr(players, choicesStr, outcomeNum):
     return "%s chooses: %s\n%s chooses: %s\n%s" % (players[0], choicesStr[0], players[1], choicesStr[1], outcome)
 
 def GetHelp():
-    l = [nameTmp[0] for nameTmp in name_and_number]
-    m = (str(l).strip('[]'))
-    return "Valid options are:\n %s\n" % m
+    retHelp = " "
+    for nameTmp in name_and_number:
+        retHelp = retHelp + nameTmp[0] + "\n "
+    return "Valid options are:\n%s" % retHelp
 
 def main():
     print "Type 'help' or '?' for help, 'quit' or 'exit' to end"
